@@ -1,0 +1,108 @@
+ext {
+    ext.libs = [:]
+    ext.versions = [:]
+    ext.classpath = [:]
+
+    def versions = [:]
+    versions.activity = "1.4.0"
+    versions.androidx_app_compat = "1.4.2"
+    versions.androidx_core = "1.8.0"
+    versions.androidx_espresso_core = "3.4.0"
+    versions.androidx_test_junit = "1.1.3"
+    versions.constraint_layout = "2.1.4"
+    versions.coroutines = "1.6.3"
+    versions.dagger = "2.42"
+    versions.fragment = "1.4.1"
+    versions.glide = "4.13.0"
+    versions.gradle = "7.0.4"
+    versions.gson = "2.8.9"
+    versions.junit = "4.13.2"
+    versions.kotlin = "1.6.10"
+    versions.lifecycle = "2.4.1"
+    versions.material = "1.6.1"
+    versions.nav = "2.4.2"
+    versions.okhttp_interceptor = "4.10.0"
+    versions.paging = "3.1.1"
+    versions.recycler_view = "1.2.1"
+    versions.retrofit = "2.9.0"
+    versions.room = "2.2.4"
+    versions.swipe_refresh = "1.1.0"
+
+    def classpath = [:]
+    classpath.gradle = "com.android.tools.build:gradle:$versions.gradle"
+    classpath.kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+    classpath.nav_safe_args_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.nav"
+
+
+    def androidX = [:]
+    androidX.activity = "androidx.activity:activity-ktx:$versions.activity"
+    androidX.app_compat = "androidx.appcompat:appcompat:$versions.androidx_app_compat"
+    androidX.constraint_layout = "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
+    androidX.core = "androidx.core:core-ktx:$versions.androidx_core"
+    androidX.fragment = "androidx.fragment:fragment-ktx:$versions.fragment"
+    androidX.paging = "androidx.paging:paging-runtime-ktx:$versions.paging"
+    androidX.recycler_view = "androidx.recyclerview:recyclerview:$versions.recycler_view"
+    androidX.swipe_refresh = "androidx.swiperefreshlayout:swiperefreshlayout:$versions.swipe_refresh"
+
+    def di = [:]
+    di.dagger = "com.google.dagger:dagger:$versions.dagger"
+    di.dagger_android = "com.google.dagger:dagger-android:$versions.dagger"
+    di.dagger_compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+    di.dagger_android_processor = "com.google.dagger:dagger-android-processor:$versions.dagger"
+
+    def imageLoader = [:]
+    imageLoader.glide = "com.github.bumptech.glide:glide:$versions.glide"
+    imageLoader.glide_compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+
+    def kotlin = [:]
+    kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin_version"
+    kotlin.coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines_version}"
+    kotlin.coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines_version}"
+
+    def lifecycle = [:]
+    lifecycle.livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+    lifecycle.viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+
+    def navigation = [:]
+    navigation.fragment = "androidx.navigation:navigation-fragment-ktx:$versions.nav"
+    navigation.ui = "androidx.navigation:navigation-ui-ktx:$versions.nav"
+
+    def network = [:]
+    network.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    network.retrofit_converter_gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    network.okhttp_logging = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp_interceptor"
+
+    def room = [:]
+    room.runtime = "androidx.room:room-runtime:$versions.room"
+    room.compiler = "androidx.room:room-compiler:$versions.room"
+
+    def ui = [:]
+    ui.material = "com.google.android.material:material:$versions.material"
+
+    def utils = [:]
+    utils.gson = "com.google.code.gson:gson:$versions.gson"
+
+    def androidTest = [:]
+    androidTest.junit = "androidx.test.ext:junit:$versions.androidx_test_junit"
+    androidTest.espresso  = "androidx.test.espresso:espresso-core:$versions.androidx_espresso_core"
+
+    def test = [:]
+    test.junit = "junit:junit:$versions.junit"
+
+    libs.androidX = androidX
+    libs.di = di
+    libs.imageLoader = imageLoader
+    libs.kotlin = kotlin
+    libs.lifecycle = lifecycle
+    libs.navigation = navigation
+    libs.network = network
+    libs.room = room
+    libs.ui = ui
+    libs.utils = utils
+    libs.androidTest = androidTest
+    libs.test = test
+
+    ext.classpath = classpath
+    ext.libs = libs
+    ext.versions = versions
+}

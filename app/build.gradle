@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.ankitmaheswari.moviestracker"
+        minSdk 22
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+        buildConfigField "String", "TMDB_API_KEY", "\"38a73d59546aa378980a88b645f487fc\""
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    // androidX
+    implementation libs.androidX.activity
+    implementation libs.androidX.app_compat
+    implementation libs.androidX.core
+    implementation libs.androidX.constraint_layout
+    implementation libs.androidX.fragment
+    implementation libs.androidX.paging
+    implementation libs.androidX.recycler_view
+    implementation libs.androidX.swipe_refresh
+
+    // di
+    implementation libs.di.dagger
+    implementation libs.di.dagger_android
+    kapt libs.di.dagger_compiler
+    kapt libs.di.dagger_android_processor
+
+    // image loader
+    implementation libs.imageLoader.glide
+    kapt libs.imageLoader.glide_compiler
+
+    // kotlin
+    implementation libs.kotlin.stdlib
+    implementation libs.kotlin.coroutines_android
+    implementation libs.kotlin.coroutines_core
+
+    // lifecycle
+    implementation libs.lifecycle.livedata
+    implementation libs.lifecycle.viewmodel
+
+    // network
+    implementation libs.network.retrofit
+    implementation libs.network.retrofit_converter_gson
+    implementation libs.network.okhttp_logging
+
+    // storage
+    implementation libs.room.runtime
+    kapt libs.room.compiler
+
+    // ui
+    implementation libs.ui.material
+    implementation libs.navigation.ui
+    implementation libs.navigation.fragment
+
+    // utils
+    implementation libs.utils.gson
+
+    testImplementation libs.test.junit
+    androidTestImplementation libs.androidTest.junit
+    androidTestImplementation libs.androidTest.espresso
+}
